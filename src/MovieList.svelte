@@ -2,7 +2,7 @@
 <script>
   let movies = [];
   let currentPage = 1;
-  const totalPages = 10; // Nombre total de pages à afficher
+  const totalPages = 20; // Nombre total de pages à afficher
 
   function formatFrenchDate(dateString) {
     const options = { year: "numeric", month: "long", day: "numeric" };
@@ -47,9 +47,9 @@
   fetchMovies(currentPage);
 </script>
 
-<h1>Films populaires (Page {currentPage} de {totalPages})</h1>
 
 <section>
+  <h1>Films populaires (Page {currentPage} de {totalPages})</h1>
   <div class="container">
     {#each movies as movie (movie.id)}
       <div class="movie">
@@ -77,6 +77,7 @@
 </section>
 
 <style>
+  
   section {
     display: flex;
     flex-direction: column;
@@ -107,6 +108,7 @@
   }
 
   h2 {
+    color: black;
     width: 18vw;
     height: 5vh;
     margin: 5%;
@@ -119,6 +121,7 @@
 
   p {
     width: 18vw;
+    font-weight: bold;
   }
   .page-buttons {
     display: flex;

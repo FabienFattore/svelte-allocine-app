@@ -2,9 +2,9 @@
     import MovieList from './MovieList.svelte';
 </script>
 
-<main>
+<body>
 	<MovieList/>
-</main>
+</body>
 
 <style>
 	
