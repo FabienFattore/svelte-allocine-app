@@ -54,10 +54,14 @@
     {#each movies as movie (movie.id)}
       <div class="movie">
         <h2>{movie.title}</h2>
-        <img
+        <div class="movie-img"><img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={`Affiche de ${movie.title}`}
         />
+        <div class="movie-overview">
+          <p>{movie.overview}</p>
+        </div>
+        </div>
         <p>Sortie le : {movie.release_date}</p>
       </div>
     {/each}
@@ -127,4 +131,44 @@
     border: none;
     box-shadow: gray 5px 5px 10px;
   }
+
+  .movie-img {
+    transition: 0.5s;
+    z-index: 0;
+    position: relative;
+  }
+
+  .movie-overview p{
+    background: rgba(0, 0, 0, 0.575);
+    backdrop-filter: blur(5px);
+    border-radius: 1%;
+    font-weight: bold;
+    text-align: left;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 2%;
+    transition: 0.5s;
+  }
+
+  .movie-img:hover {
+    opacity: 0.9;
+    transition: 0.5s;
+  }
+
+  .movie-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .movie-overview:hover {
+    opacity: 1;
+  }
+
+
 </style>
